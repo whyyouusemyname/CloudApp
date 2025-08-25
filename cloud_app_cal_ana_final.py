@@ -9,9 +9,7 @@ import seaborn as sns
 import matplotlib.font_manager as fm
 import io
 
-# --- ⚙️ 1. ส่วนของการตั้งค่าและฟังก์ชัน (Setup & Functions) ---
-
-# ตั้งค่าฟอนต์ภาษาไทยสำหรับกราฟ
+# --- 1. ส่วนของการตั้งค่าและฟังก์ชัน (Setup & Functions) ---
 try:
     font_path = 'THSarabunNew.ttf'
     font_prop = fm.FontProperties(fname=font_path)
@@ -43,7 +41,7 @@ def load_and_process_files(uploaded_files, columns_to_keep, time_col):
     
     return processed_df
 
-# --- 🖥️ 2. ส่วนหน้าตาของแอปพลิเคชัน (Streamlit UI) ---
+# --- 2. ส่วนหน้าตาของแอปพลิเคชัน (Streamlit UI) ---
 
 st.set_page_config(layout="wide")
 st.title("โปรแกรมจัดการข้อมูลความสูงฐานเมฆ")
