@@ -148,7 +148,7 @@ if st.button("เริ่มการวิเคราะห์", type="primar
                 st.download_button("ดาวน์โหลดข้อมูล (AMOUNT2)", csv2, "amount2_data.csv", "text/csv", use_container_width=True, key="dl_amount2")
 
                 st.markdown("---")
-                st.subheader("2.4 รูปแบบความสูงฐานเมฆรายชั่วโมง (Diurnal Pattern)")
+                st.subheader("2.4 รูปแบบความสูงฐานเมฆรายชั่วโมง")
                 
                 df_inst_eda = df_inst.copy()
                 df_inst_eda['hour'] = df_inst_eda.index.hour
@@ -157,12 +157,12 @@ if st.button("เริ่มการวิเคราะห์", type="primar
                     x='hour',
                     y='BASE1 (FT)',
                     title='การกระจายตัวของความสูงฐานเมฆ Base 1 ในแต่ละชั่วโมงของวัน',
-                    labels={'hour': 'ชั่วโมงของวัน', 'BASE1 (FT)': 'ความสูงฐานเมฆ (ฟุต)'}
+                    labels={'hour': 'ชั่วโมงของวัน(UTC)', 'BASE1 (FT)': 'ความสูงฐานเมฆ (ฟุต)'}
                 )
                 st.plotly_chart(fig_diurnal, use_container_width=True)
                 
                 st.markdown("---")
-                st.subheader("2.5 รูปแบบความสูงฐานเมฆรายเดือน (Seasonal Pattern)")
+                st.subheader("2.5 รูปแบบความสูงฐานเมฆรายเดือน")
                 
                 df_inst_eda['month'] = df_inst_eda.index.month
                 fig_seasonal = px.box(
